@@ -31,22 +31,29 @@ export default function Navbar() {
         setShowText(!showText);
     }
 
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+        // You can also save the dark mode preference in local storage or a global state management solution.
+    };
+
 
     return (
         <>
             <div className="flex">
 
 
-                <div className="h-screen">
-                    <h1 className="text-xl font-bold text-center py-5">
+                <div className={`h-screen ${darkMode ? 'bg-slate-700 text-white' : ''}`}>
+                    <h1 className="text-xl font-bold text-center py-5 ">
                         <span className="">{showText ? (
-                            <span className="ml-2"><a href=''><DataObjectIcon />RifDev</a></span>
+                            <span className="ml-2 "><a href=''><DataObjectIcon />RifDev</a></span>
                         ) : (
                             <span className="ml-2"><a href=''><DataObjectIcon /></a></span>
                         )}</span>
                     </h1>
-                    <div>
-                        <ul className=" py-5 divide-y divide-slate-200">
+                    <div className='dark:bg-black'>
+                        <ul className=" py-5 divide-y divide-slate-200 ">
                             <li
                                 className={`py-2 px-5 w-max cursor-pointer ${isi === 'Dashboard' ? 'text-red-600' : 'hover:text-red-600'
                                     }`}
@@ -68,7 +75,7 @@ export default function Navbar() {
                                 {showText && <span className="ml-2">Shop</span>}
                             </li>
                             <li className={`py-2 px-5 cursor-pointer ${isi === 'Analytic' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
+                                }`}
                                 onClick={() => {
                                     setIsi('Analytic');
                                 }}>
@@ -76,7 +83,7 @@ export default function Navbar() {
                                 {showText && <span className="ml-2">Analytic</span>}
                             </li>
                             <li className={`py-2 px-5 cursor-pointer ${isi === 'Tickets' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
+                                }`}
                                 onClick={() => {
                                     setIsi('Tickets');
                                 }}>
@@ -84,7 +91,7 @@ export default function Navbar() {
                                 {showText && <span className="ml-2">Tickets</span>}
                             </li>
                             <li className={`py-2 px-5 cursor-pointer ${isi === 'Users' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
+                                }`}
                                 onClick={() => {
                                     setIsi('Users');
                                 }}>
@@ -92,7 +99,7 @@ export default function Navbar() {
                                 {showText && <span className="ml-2">Users</span>}
                             </li>
                             <li className={`py-2 px-5 cursor-pointer ${isi === 'Settings' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
+                                }`}
                                 onClick={() => {
                                     setIsi('Settings');
                                 }}>
@@ -107,7 +114,7 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
-                <div className=" h-max w-full py-4 px-2 ">
+                <div className={` h-max w-full py-4 px-2 ${darkMode ? 'bg-slate-700 text-white' : ''} `}>
                     <div className='flex justify-between pb-3'>
                         <div className='flex '>
                             <button onClick={buttonHandler}><MenuOutlinedIcon sx={{ fontSize: 30 }} /></button>
@@ -120,6 +127,12 @@ export default function Navbar() {
                                 </span>
                             </div>
                         </div>
+                        <div className="p-4">
+                            <label className="switch">
+                                <input type="checkbox" onChange={toggleDarkMode} />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
 
                         <div>
                             <div className='relative me-4'>
@@ -131,13 +144,13 @@ export default function Navbar() {
 
                         </div>
                     </div>
-                    <div className='daftar px-3 py-5 bg-slate-100'>
-                        {isi === 'Shop' && <Shop />}
+                    <div className={`daftar px-3 py-5 ${darkMode ? 'bg-slate-800' : 'bg-slate-100'} `}>
+                        {/* {isi === 'Shop' && <Shop />}
                         {isi === 'Analytic' && <Analytic />}
                         {isi === 'Tickets' && <Tickets />}
                         {isi === 'Users' && <Users />}
-                        {isi === 'Settings' && <Settings />}
-                        {/* <Analytic /> */}
+                        {isi === 'Settings' && <Settings />} */}
+                        <Analytic theme={darkMode} />
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-export default function () {
+export default function (theme) {
     return (
         <>
             <div className='flex justify-between items-center flex-wrap'>
@@ -27,7 +27,7 @@ export default function () {
             </div>
 
             <div className='mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mb-10'>
-                <div className='bg-white flex items-center px-10 py-4 rounded-lg mt-3 '>
+                <div className={`${theme ? 'bg-slate-700' : 'bg-white'} flex items-center px-10 py-4 rounded-lg mt-3 `}>
                     <span className='bg-blue-200 text-blue-500 p-4'><EventAvailableIcon /></span>
                     <div className='ms-2'>
                         <h1 className='font-bold text-xl'>1,074</h1>
