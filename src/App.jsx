@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Dashboard from './Dashboard'
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import Dashboard from './Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Dashboard />
+      <div className='dark:bg-slate-700'>
+        <Dashboard />
+      </div>
     </>
   )
 }

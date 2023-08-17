@@ -1,179 +1,179 @@
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
-import ConfirmationNumberOutlinedIcon from '@mui/icons-material/ConfirmationNumberOutlined';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import ListIcon from '@mui/icons-material/List';
 import SearchIcon from '@mui/icons-material/Search';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import DataObjectIcon from '@mui/icons-material/DataObject';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import NightlightIcon from '@mui/icons-material/Nightlight';
-import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
-import Brightness5OutlinedIcon from '@mui/icons-material/Brightness5Outlined';
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-
-import React, { useState } from 'react';
-import Analytic from './Analytic';
-import Shop from './Shop';
-import { Link, useParams } from 'react-router-dom';
-import Tickets from './Tickets';
-import Users from './Users';
-import Settings from './Settings';
-
-
-
-export default function Navbar() {
-
-    const [showText, setShowText] = useState(false);
-    const [isi, setIsi] = useState('');
-
-
-    function buttonHandler() {
-        setShowText(!showText);
-    }
-
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        // You can also save the dark mode preference in local storage or a global state management solution.
-    };
-
-
+export default function () {
     return (
         <>
-            <div className={`flex h-screen ${darkMode ? 'dark' : ''}`}>
-
-
-                <div className={`bg-white dark:bg-slate-700 dark:text-white`}>
-                    <h1 className="text-xl font-bold text-center py-5 ">
-                        <span className="">{showText ? (
-                            <span className="ml-2 "><a href=''><DataObjectIcon />RifDev</a></span>
-                        ) : (
-                            <span className="ml-2"><a href=''><DataObjectIcon /></a></span>
-                        )}</span>
-                    </h1>
-                    <div className='dark:bg-slate-700'>
-                        <ul className=" py-5 divide-y divide-slate-200 dark:divide-slate-800">
-                            <li
-                                className={`py-2 px-5 w-max cursor-pointer ${isi === 'Dashboard' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
-                                onClick={() => {
-                                    setIsi('Dashboard');
-                                }}
-                            >
-                                <DashboardOutlinedIcon />
-                                {showText && <span className="ml-2">Dashboard</span>}
-                            </li>
-                            <li
-                                className={`py-2 px-5 cursor-pointer ${isi === 'Shop' ? 'text-red-600' : 'hover:text-red-600'
-                                    }`}
-                                onClick={() => {
-                                    setIsi('Shop');
-                                }}
-                            >
-                                <ShoppingCartOutlinedIcon />
-                                {showText && <span className="ml-2">Shop</span>}
-                            </li>
-                            <li className={`py-2 px-5 cursor-pointer ${isi === 'Analytic' ? 'text-red-600' : 'hover:text-red-600'
-                                }`}
-                                onClick={() => {
-                                    setIsi('Analytic');
-                                }}>
-                                <AssessmentOutlinedIcon />
-                                {showText && <span className="ml-2">Analytic</span>}
-                            </li>
-                            <li className={`py-2 px-5 cursor-pointer ${isi === 'Tickets' ? 'text-red-600' : 'hover:text-red-600'
-                                }`}
-                                onClick={() => {
-                                    setIsi('Tickets');
-                                }}>
-                                <ConfirmationNumberOutlinedIcon />
-                                {showText && <span className="ml-2">Tickets</span>}
-                            </li>
-                            <li className={`py-2 px-5 cursor-pointer ${isi === 'Users' ? 'text-red-600' : 'hover:text-red-600'
-                                }`}
-                                onClick={() => {
-                                    setIsi('Users');
-                                }}>
-                                <GroupOutlinedIcon />
-                                {showText && <span className="ml-2">Users</span>}
-                            </li>
-                            <li className={`py-2 px-5 cursor-pointer ${isi === 'Settings' ? 'text-red-600' : 'hover:text-red-600'
-                                }`}
-                                onClick={() => {
-                                    setIsi('Settings');
-                                }}>
-                                <SettingsOutlinedIcon />
-                                {showText && <span className="ml-2">Settings</span>}
-                            </li>
-                        </ul>
-
-                        <button className='text-red-600 px-5 font-bold'>
-                            <LogoutOutlinedIcon />
-                            {showText && <span className="ml-2"><a href="">Log Out</a></span>}
+            <div className=''>
+                <div className='flex justify-between items-center flex-wrap'>
+                    <div>
+                        <h1 className='text-3xl font-bold mt-5'>Dashboard</h1>
+                        <p className='mt-2 text-sm text-slate-500'>Analytics / Shop</p>
+                    </div>
+                    <div>
+                        <button className='bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-500'>
+                            <CloudDownloadIcon />
+                            <span className='ms-1'>Download CSV</span>
                         </button>
                     </div>
                 </div>
-                <div className={` h-max w-full py-4 px-2 dark:bg-slate-700 dark:text-white `}>
-                    <div className='flex justify-between pb-3'>
-                        <div className='flex '>
-                            <button onClick={buttonHandler}><MenuOutlinedIcon sx={{ fontSize: 30 }} /></button>
-                            <div className='flex items-center'>
-                                <input type="text" name="cari" id="" className='ms-2 outline-none px-3 py-1 border rounded-l-full border-slate-200 dark:bg-slate-800 dark:border-slate-500' />
-                                <span className='bg-blue-600 text-white px-3 py-1 rounded-r-full'>
-                                    <button type='submit'>
-                                        <SearchIcon />
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                        <div className='flex items-center'>
-                            <div className="p-4 flex-1">
-                                <label className="switch cursor-pointer">
-                                    <input type="checkbox" onChange={toggleDarkMode} className='hidden' />
-                                    <span className={`slider round ${darkMode ? 'rotate-180' : ''}`}>
-                                        {darkMode ?
-                                            <span className='flex gap-2'>
-                                                <span><Brightness5OutlinedIcon /></span>
-                                                {/* <h1 className=''>Dark</h1> */}
-                                            </span>
-                                            :
-                                            <span className='flex gap-2'>
-                                                <NightlightOutlinedIcon />
-                                                
-                                            </span>
-                                        }
 
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div>
-                                <div className='relative me-4'>
-                                    <button>
-                                        <NotificationsNoneIcon sx={{ fontSize: 25 }} />
-                                    </button>
-                                    <p className='absolute block top-0 right-0 bg-red-600 rounded-full text-white text-xs'>12</p>
-                                </div>
-
-                            </div>
+                <div className='mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mb-10'>
+                    <div className={`bg-white dark:bg-slate-700 flex items-center px-10 py-4 rounded-lg mt-3 `}>
+                        <span className='bg-blue-200 text-blue-500 p-4'><EventAvailableIcon /></span>
+                        <div className='ms-2'>
+                            <h1 className='font-bold text-xl'>1,074</h1>
+                            <p className='text-sm text-slate-500'>Paid Order</p>
                         </div>
                     </div>
-                    <div className={`daftar px-3 py-5 bg-slate-100 dark:bg-slate-800`}>
-                        {isi === 'Shop' && <Shop />}
-                        {isi === 'Analytic' && <Analytic />}
-                        {isi === 'Tickets' && <Tickets />}
-                        {isi === 'Users' && <Users />}
-                        {isi === 'Settings' && <Settings />}
-                        {/* <Analytic theme={darkMode} /> */}
+                    <div className='bg-white dark:bg-slate-700  flex items-center px-10 py-4 rounded-lg mt-3'>
+                        <span className='bg-yellow-200 text-yellow-500 p-4'><RemoveRedEyeIcon /></span>
+                        <div className='ms-2'>
+                            <h1 className='font-bold text-xl'>3,944</h1>
+                            <p className='text-sm text-slate-500'>Site Visite</p>
+                        </div>
+                    </div>
+                    <div className='bg-white dark:bg-slate-700  flex items-center px-10 py-4 rounded-lg mt-3'>
+                        <span className='bg-green-200 text-green-500 p-4'><ShowChartIcon /></span>
+                        <div className='ms-2'>
+                            <h1 className='font-bold text-xl'>14,721</h1>
+                            <p className='text-sm text-slate-500'>Searches</p>
+                        </div>
+                    </div>
+                    <div className='bg-white dark:bg-slate-700  flex items-center px-10 py-4 rounded-lg mt-3'>
+                        <span className='bg-red-200 text-red-500 p-4'><LocalAtmIcon /></span>
+                        <div className='ms-2'>
+                            <h1 className='font-bold text-xl'>$6,789</h1>
+                            <p className='text-sm text-slate-500'>Total Sales</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Recent order start */}
+                <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
+                    <div className=''>
+                        <div className='flex bg-white dark:bg-slate-700 justify-between p-5 rounded-lg'>
+                            <h1 className='font-bold'>
+                                <span className='me-3'><LibraryBooksIcon /></span>
+                                Recent Orders
+                            </h1>
+                            <div className='flex'>
+                                <div className='me-5'>
+                                    <ListIcon />
+                                </div>
+                                <div>
+                                    <SearchIcon />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='bg-white dark:bg-slate-700 p-5'>
+                            <table className=" p-10 w-full">
+                                <thead>
+                                    <tr className=" text-start ">
+                                        <th className="text-start">User</th>
+                                        <th className="text-start">Order Date</th>
+                                        <th className=" ">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody className=''>
+                                    <tr className='mt-5'>
+                                        <td className="text-start pt-5">Arief Rachman</td>
+                                        <td className="text-start pt-5">14-01-2005</td>
+                                        <td className=" text-white text-center flex justify-center pt-5">
+                                            <h1 className='bg-green-600 rounded-full w-max px-2 py-1'>Complated</h1>
+                                        </td>
+                                    </tr>
+                                    <tr className=''>
+                                        <td className="text-start pt-5">Arief Rachman</td>
+                                        <td className="text-start pt-5">14-01-2005</td>
+                                        <td className=" text-white text-center flex justify-center pt-5">
+                                            <h1 className='bg-green-600 rounded-full w-max px-2 py-1'>Complated</h1>
+                                        </td>
+                                    </tr>
+                                    <tr className='mt-5'>
+                                        <td className="text-start pt-5">Arief Rachman</td>
+                                        <td className="text-start pt-5">14-01-2005</td>
+                                        <td className=" text-white text-center flex justify-center pt-5">
+                                            <h1 className='bg-green-600 rounded-full w-max px-2 py-1'>Complated</h1>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {/* reminders start */}
+                    <div className='bg-white dark:bg-slate-700 mt-5 md:mt-0 rounded-lg'>
+                        <div className='flex justify-between p-5'>
+                            <div className='flex font-bold'>
+                                <span className='me-3'>
+                                    <TextSnippetIcon />
+                                </span>
+                                <h1>Reminders</h1>
+                            </div>
+                            <div className='flex'>
+                                <div className='me-5'>
+                                    <ListIcon />
+                                </div>
+                                <div>
+                                    <SearchIcon />
+                                </div>
+                            </div>
+                        </div>
+                        <div className='p-5'>
+                            <div className='bg-green-700  rounded-lg '>
+                                <div className='bg-slate-100 dark:bg-slate-800 flex items-center justify-between ms-2 overflow-hidden rounded-r-lg'>
+                                    <h1 className='ms-1 px-3 py-2 w-full'>
+                                        <span className='me-2'>
+                                            <CheckCircleOutlineIcon />
+                                        </span>
+                                        Start Our Meeting
+                                    </h1>
+                                    <span className='bg-slate-100 dark:bg-slate-800 me-2'>
+                                        <MoreVertIcon />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='bg-green-700  rounded-lg mt-5'>
+                                <div className='bg-slate-100 dark:bg-slate-800 flex items-center justify-between ms-2 overflow-hidden rounded-r-lg'>
+                                    <h1 className='ms-1 px-3 py-2 w-full'>
+                                        <span className='me-2'>
+                                            <CheckCircleOutlineIcon />
+                                        </span>
+                                        Start Our Meeting
+                                    </h1>
+                                    <span className='bg-slate-100 dark:bg-slate-800 me-2'>
+                                        <MoreVertIcon />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='bg-green-700  rounded-lg mt-5'>
+                                <div className='bg-slate-100 dark:bg-slate-800 flex items-center justify-between ms-2 overflow-hidden rounded-r-lg'>
+                                    <h1 className='ms-1 px-3 py-2 w-full'>
+                                        <span className='me-2'>
+                                            <CheckCircleOutlineIcon />
+                                        </span>
+                                        Start Our Meeting
+                                    </h1>
+                                    <span className='bg-slate-100 dark:bg-slate-800 me-2'>
+                                        <MoreVertIcon />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
